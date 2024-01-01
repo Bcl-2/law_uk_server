@@ -15,4 +15,7 @@ func ReigsterRoutes(r *gin.Engine, db *gorm.DB) {
 	routes := r.Group("/api/v1")
     routes.GET("/articles", h.GetArticles)
 	routes.GET("/chapters", h.GetChapters)
+	routes.GET("/parts", h.GetParts)
+	routes.GET("/sections", h.GetSections)
+	routes.POST("/punishments", h.PostPunishment)
 }

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"main/logs"
 	"main/pkg/articles"
 	"main/pkg/common/db"
 
@@ -11,6 +12,8 @@ import (
 func main() {
     viper.SetConfigFile("../pkg/common/envs/.env")
     viper.ReadInConfig()
+
+    logs.InitLogger()
 
     port := viper.Get("PORT").(string)
     dbUrl := viper.Get("DB_URL").(string)
